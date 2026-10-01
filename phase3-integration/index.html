@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>segue — Phase 3 integration harness</title>
+    <style>
+      :root { font-family: Inter, system-ui, sans-serif; color: #e9e8ef; background: #12121a; }
+      body { max-width: 860px; margin: 36px auto; padding: 0 20px 48px; }
+      h1 { margin-bottom: 4px; }
+      .hint { color: #aaa8ba; line-height: 1.5; }
+      .tracks { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin: 24px 0 14px; }
+      fieldset, #status, #plan, #diagnostics { border: 1px solid #353542; border-radius: 10px; background: #1b1b26; }
+      fieldset { padding: 16px; }
+      legend { font-weight: 700; padding: 0 6px; }
+      input { width: 100%; box-sizing: border-box; margin-top: 8px; }
+      button { margin: 8px 8px 8px 0; padding: 10px 14px; border: 0; border-radius: 7px; font-weight: 650; cursor: pointer; background: #a78bfa; color: #16111e; }
+      button:disabled { cursor: not-allowed; opacity: .45; }
+      #status, #plan, #diagnostics { padding: 12px; margin-top: 14px; white-space: pre-wrap; font: 13px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; }
+      #plan { min-height: 76px; color: #c9f7d8; }
+      .warn { color: #ffd58a; }
+    </style>
+  </head>
+  <body>
+    <h1>segue — Phase 3</h1>
+    <p class="hint">Two-file integration harness. Files stay local. Analyze both tracks, start Deck A, then schedule one decision-engine-driven transition. Open DevTools for the full event log.</p>
+
+    <div class="tracks">
+      <fieldset><legend>Deck A — outgoing</legend><input id="fileA" type="file" accept="audio/*" /></fieldset>
+      <fieldset><legend>Deck B — incoming</legend><input id="fileB" type="file" accept="audio/*" /></fieldset>
+    </div>
+
+    <button id="analyzeBtn" disabled>1. Analyze both files</button>
+    <button id="playBtn" disabled>2. Play Deck A</button>
+    <button id="scheduleBtn" disabled>3. Schedule transition</button>
+    <button id="stopBtn" disabled>Stop all</button>
+
+    <section id="plan">No transition plan yet.</section>
+    <section id="diagnostics">Diagnostics: waiting for analysis.</section>
+    <section id="status">Load two audio files.</section>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

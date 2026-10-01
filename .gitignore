@@ -1,0 +1,32 @@
+# Dependencies and package-manager caches
+node_modules/
+.pnpm-store/
+
+# Generated application output
+dist/
+.angular/
+coverage/
+
+# Local databases and Electron runtime state
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+
+# Environment-specific configuration
+.env
+.env.*
+!.env.example
+
+# Local music library and audio assets
+songs/
+*.mp3
+*.flac
+*.wav
+*.m4a
+*.aac
+*.ogg
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.vscode/
